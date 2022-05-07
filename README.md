@@ -85,6 +85,8 @@ File permissions are used to control access. There are 3 types of policies:
 | Usage                  | HTTPS, HTTP, SMTP, POP, FTP                                                    | Broadcasting, video conferencing, streaming, DNS, VoIP                                      |
 
 
+
+
 ## References:  
 [Cook, 2017. TCP vs. UDP: What’s the Difference?](https://www.lifesize.com/en/blog/tcp-vs-udp/)  
 [IBM, 2019. LAMP Stack](https://www.ibm.com/uk-en/cloud/learn/lamp-stack-explained)   
