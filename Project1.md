@@ -27,7 +27,7 @@ curl http://127.0.0.1:80
 ![apache default webpage](/images/apache_default_webpage.png)
 
 ## 2. Installing MySQL 
-* MySQL is a popular relational database management system 
+* MySQL is a popular Relational Database Management System 
 * To install 
 ```
 sudo apt install mysql-server
@@ -49,7 +49,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'mynewpas
 ![Secure installation](/images/Secure_SQL_installation.png)
 
 ## 3. Installing PHP
-* PHP is a programming language which will be used to process code.
+* PHP is a programming language which is used to process code.
 * In addition to this, the php-mysql package needs installing to communicate with MySQL. Likewise, libapache2-mod-php enables Apache to handle PHP files.
 * To install 
 ```
@@ -133,7 +133,7 @@ phpinfo();
 ![php Info](/images/php_webpage.png)
 
 ## Close
-* Once complete, the index.php file should be removed as this contains sensitive information about the server 
-* The EC2 instance should be stopped to avoid incurring charges 
+* Once complete, the index.php file should be removed as this contains sensitive information about the server.
+* The EC2 instance should be stopped to avoid incurring charges.
 
 
