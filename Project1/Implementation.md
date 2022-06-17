@@ -15,16 +15,16 @@ sudo systemctl status apache2
 ![apache](/Project1/images/apache_status.png)
 
 * The Security Group must be updated to allow inbound connection through port 80. Once complete, the server can be accessed from the internet. 
-![security group](Project1/images/security_groups.png) 
+![security group](/Project1/images/security_groups.png) 
 * This can be confirmed by running the following commands locally ...
 ```bash
 curl http://localhost:80
 curl http://127.0.0.1:80
 ```
-![curl localhost](Project1/images/curl_localhost.png)
+![curl localhost](/Project1/images/curl_localhost.png)
 
 * ... or opening a web browser and navigating to the public IP address of the instance (this can be found under instance details or running the following command `curl -s http://169.254.169.254/latest/meta-data/public-ipv4`)
-![apache default webpage](Project1/images/apache_default_webpage.png)
+![apache default webpage](/Project1/images/apache_default_webpage.png)
 
 ## 2. Installing MySQL 
 * MySQL is a popular Relational Database Management System 
@@ -39,14 +39,14 @@ sudo mysql_secure_installation
 * This should prompt a VALIDATE PASSWORD PLUGIN which can be enabled. Following this, the server will prompt a password for MySQL root user. If the PLUGIN has been enabled, the guidelines should be followed, but if not, a strong password is still recommended. Following this, the server will prompt several further questions which can be answered as Y/yes. 
 ### Blocker
 * When running the secure installation, the following error was observed 
-![Blocker](Project1/images/SQL_Blocker.png)
+![Blocker](/Project1/images/SQL_Blocker.png)
 * This was resolved by running `sudo mysql` and running the following query to set the password 
 ```sql
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'mynewpassword'
 ```
-![Resolve](Project1/images/Resolve_Blocker.png)
+![Resolve](/Project1/images/Resolve_Blocker.png)
 * Following this, the secure installation can be run with the password set in the SQL command above 
-![Secure installation](Project1/images/Secure_SQL_installation.png)
+![Secure installation](/Project1/images/Secure_SQL_installation.png)
 
 ## 3. Installing PHP
 * PHP is a programming language which is used to process code.
@@ -80,7 +80,7 @@ sudo vi /etc/apache2/sites-available/projectlamp.conf
 </VirtualHost>
 ```
 
-![Virtual Host](Project1/images/virtual_host_setup.png)
+![Virtual Host](/Project1/images/virtual_host_setup.png)
 
 * To enable a new virtual host, use the command `a2ensite`
 ```
@@ -98,14 +98,14 @@ sudo apache2ctl configtest
 ```
 sudo systemctl reload apache2
 ```
-![Enable New Virtual Host](Project1/images/Enable_virtual_host.png)
+![Enable New Virtual Host](/Project1/images/Enable_virtual_host.png)
 
 * The website is now active but contains no content so navigate back to /var/www/projectlamp and create and index.html file to render a very basic webpage.
 ```bash
 sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlamp/index.html
 ```
 * The webpage should display the following output
-![Basic Webpage](Project1/images/basic_webpage.png)
+![Basic Webpage](/Project1/images/basic_webpage.png)
 
 ## Enable PHP
 * Index.html files take precedence over an index.php file. This order can be changed in the DirectoryIndex directive:
@@ -113,9 +113,9 @@ sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/met
 sudo vim /etc/apache2/mods-enabled/dir.conf
 ```
 * Before...
-![Before](Project1/images/Directory_index_directive_before.png)
+![Before](/Project1/images/Directory_index_directive_before.png)
 * After ...
-![After](Project1/images/Directory_index_directive_after.png)
+![After](/Project1/images/Directory_index_directive_after.png)
 
 * Reload apache for changes to take effect 
 ```
@@ -130,7 +130,7 @@ vim /var/www/projectlamp/index.php
 phpinfo();
 ```
 * Save and refresh browser...
-![php Info](Project1/images/php_webpage.png)
+![php Info](/Project1/images/php_webpage.png)
 
 ## Close
 * Once complete, the index.php file should be removed as this contains sensitive information about the server.
