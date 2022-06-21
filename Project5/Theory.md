@@ -1,6 +1,6 @@
 # Project 5 - Client/Server architecture using MySQL
 
-[Project Implementation]()
+[Project Implementation](https://github.com/A-Ahmed100216/LAMP_Stack_Implementation/blob/main/Project5/Implementation.md)
 
 ## Client/Server Architecture
 * Architecture model where two or more computers are connected over a network and exchnage requests 
