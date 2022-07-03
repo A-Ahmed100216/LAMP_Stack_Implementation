@@ -1,5 +1,5 @@
 # MERN Stack Implementation
-**[Project Implementation](https://github.com/A-Ahmed100216/MERN_Stack_Implementation/blob/main/Project.md)**
+**[Project Implementation](https://github.com/A-Ahmed100216/LAMP_Stack_Implementation/blob/main/Project3/Implementation.md)**
 
 A MERN webstack consists of the following componenets:
 1. MongoDB - NoSQL database, stores application data as documents 
