@@ -1,4 +1,8 @@
-# Project 10 Implementation 
+# Project 10 - Load Balancer Solution with Nginx and SSL/TLS
+
+Data passing between a client and webserver typically travels through multiple networks. If unencrypted, this can be easily targeted to steal sensitive information in what is known as a Man-In-The-Middle attack. 
+SSL/TLS can be used to protect against MITM attacks by creating an encrypted session between server and client. SSL uses digital certificates which the websites checks against a Certificate Authority to confirm validity. 
+This project will build upon previous by registering the website with LetsEnrcypt Certificate Authority. To automate certificate issuance a shell client recommended by LetsEncrypt – cetrbot, will be used. 
 
 ## 1. Configure Nginx as a Load Balancer 
 1. Connect to the Apache Load Balancer Instance 
@@ -51,11 +55,9 @@ sudo systemctl status nginx
 1. Register a new domain name using any Domain Name Registrar (GoDaddy, Domain.com, BlueHost.com etc.)
 2. Assign an Elastic IP to your Load Balancer. This will prevent the need to constantly change the DNS record of the domain every time the LB instance is re-started. 
     a. Create an Elastic IP Address: WS Management Console > EC2 > Select `Network & Security` from LH menu > Allocate Elastic IP Address
-    ![Create Elastic IP]()
     b. Associate IP - Select the newly created IP address and select `Associate Elastic IP address` from the actions menu. Associate with the LB Instance. 
 3. Update your Domains A Records. For GoDaddy this can be achieved by selecting Domain Settings and 'Edit'. Insert the Elastic IP into the 'Value' box.
 4. Confirm your webserver is accessible via the domain name - `http://<your_domain_name.com>`
-![]
 5. Update the nginx.conf to recognise the new domain name. 
 ```bash
 sudo vi /etc/nginx/nginx.conf
@@ -79,7 +81,6 @@ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 sudo certbot --nginx
 ```
 9. Confirm you can access the website via the HTTPS Protocol (make sure port 443 is open on your LB Instance Security Group).
-![HTTPS webpage]()
 10.  By default, LetsEncrypt certificate is valid for 90 days, so it is recommended to renew it at least every 60 days or more frequently. Therefore, it needs renewing periodically. The renewal command can be tested by running:
 ```
 sudo certbot renew --dry-run
