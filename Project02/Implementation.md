@@ -12,19 +12,19 @@ sudo apt install nginx
 ```
 sudo systemctl status nginx
 ```
-![NGINX Status](/Project2/images/nginx_status.png)
+![NGINX Status](/Project02/images/nginx_status.png)
 * Check Security Group settings to ensure port 80 is opened to allow access to the internet. Once this is done, we can run the following curl commands to confirm access:
 ```bash
 curl http://localhost:80
 ```
-![curl localhost](/Project2/images/curl_localhost_dns.png)
+![curl localhost](/Project02/images/curl_localhost_dns.png)
 
 ```bash 
 curl http://127.0.0.1:80
 ```
-![curl localhost](/Project2/images/curl_localhost.png)
+![curl localhost](/Project02/images/curl_localhost.png)
 * Similarly, navigating to the webpage (public IP) should render the following output.  
-![nginx webpage](/Project2/images/nginx_default_webpage.png)
+![nginx webpage](/Project02/images/nginx_default_webpage.png)
 
 ## 2. Installing MySQL
 * Install MySQL
@@ -32,8 +32,8 @@ curl http://127.0.0.1:80
 sudo apt install mysql-server
 ```
 * The next step is to run the secure installation however this faces the same [blocker](https://github.com/A-Ahmed100216/LAMP_Stack_Implementation/blob/main/Project1.md#blocker) as Project 1 therefore the same solution was implemented.
-![sql](/Project2/images/sql.png)
-![sql secure installation](/Project2/images/sql_secure_installation.png)
+![sql](/Project02/images/sql.png)
+![sql secure installation](/Project02/images/sql_secure_installation.png)
 
 
 ## 3. Installing PHP 
@@ -44,7 +44,7 @@ The following php packages must be installed:
 ```
 sudo apt install php-fpm php-mysql
 ```
-![install php](/Project2/images/install_php.png)
+![install php](/Project02/images/install_php.png)
 
 ## 4. Configuring NGINX to use PHP Processor 
 * NGINX uses server blocks to encapsulate config details (similar to virtual hosts in Apache)
@@ -58,7 +58,7 @@ sudo mkdir /var/www/projectLEMP
 ```
 sudo chown -R $USER:$USER /var/www/projectLEMP
 ```
-![configure nginx](/Project2/images/create_domain.png)
+![configure nginx](/Project02/images/create_domain.png)
 
 * Create a new config file in NGINX's sites-available directory with a basic config:
 ```bash
@@ -106,7 +106,7 @@ sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/
 ```
 sudo nginx -t
 ```
-![nginx conf](/Project2/images/nginx_conf.png)
+![nginx conf](/Project02/images/nginx_conf.png)
 
 * Disable the default NGINX host 
 ```
@@ -120,7 +120,7 @@ sudo systemctl reload nginx
 ```
 sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html
 ```
-![simple webpage](/Project2/images/simple_webpage.png)
+![simple webpage](/Project02/images/simple_webpage.png)
 
 ## Testing PHP with NGINX
 * The LEMP stack is now completely installed and operational. We now need to test whether NGINX can send .php file to the PHP processor.
@@ -133,7 +133,7 @@ sudo nano /var/www/projectLEMP/info.php
 phpinfo();
 ```
 * This should render the following output 
-![php webpage](/Project2/images/php_webpage.png)
+![php webpage](/Project02/images/php_webpage.png)
 
 * Once complete, remove the file as it contains sensitive information about your server. 
 ```bash  
@@ -157,7 +157,7 @@ CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'passwor
 ```sql
 GRANT ALL ON example_database.* TO 'example_user'@'%';
 ```
-![create database](/Project2/images/create_database.png)
+![create database](/Project02/images/create_database.png)
 
 * Exit and log in as the new user
 ```
@@ -167,7 +167,7 @@ mysql -u example_user -p
 ```sql
 SHOW DATABASES;
 ```
-![show databases](/Project2/images/Show_databases.png)
+![show databases](/Project02/images/Show_databases.png)
 * Create a test table and insert a few values:
 ```sql 
 CREATE TABLE example_database.todo_list (
@@ -179,7 +179,7 @@ CREATE TABLE example_database.todo_list (
 INSERT INTO example_database.todo_list (content) VALUES ("My first important item");
 SELECT * FROM example_database.todo_list;
 ```
-![to do list table](/Project2/images/todo_list_add.png)
+![to do list table](/Project02/images/todo_list_add.png)
 
 * Create a php script to connect to MySQL
 ```bash
@@ -205,4 +205,4 @@ try {
     die();
 }
 ```
-![final webpage](/Project2/images/final_webpage.png)
+![final webpage](/Project02/images/final_webpage.png)

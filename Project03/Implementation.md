@@ -16,7 +16,7 @@ sudo apt-get install -y nodejs
 node -v
 npm -v
 ```
-![node](/Project3/images/node_npm_install.png)
+![node](/Project03/images/node_npm_install.png)
 * Prepare your application code. Create a directory and initialise the project using the command `npm init`. This creates a package.json file which contains information about your application and the dependencies that it needs to run.
 ```bash
 # Create directory called Todo
@@ -26,14 +26,14 @@ cd Todo
 # Initialise project
 npm init
 ```
-![Initialise project](/Project3/images/init_project.png)
+![Initialise project](/Project03/images/init_project.png)
 
 ## 2. Install ExpressJS
 * Express is a framework for NodeJS therefore simplifies development. Install via the command 
 ```bash
 npm install express
 ```
-![install express](/Project3/images/install_express.png)
+![install express](/Project03/images/install_express.png)
 * Next, create a index.js file. This file will be using a module called dotenv which will also need installing via npm. 
 ```bash
 # Install dotenv
@@ -43,7 +43,7 @@ touch index.js
 # Open file
 vi index.js
 ```
-![install dotenv](/Project3/images/install_dotenv.png)   
+![install dotenv](/Project03/images/install_dotenv.png)   
 * Open the index.js file and paste the following code 
 ```js
 const express = require('express');
@@ -71,11 +71,11 @@ console.log(`Server running on port ${port}`)
 ```bash 
 node index.js
 ```
-![start server](/Project3/images/start_server.png)
+![start server](/Project03/images/start_server.png)
 * The app uses port 5000 so our Security Group rules must be amended to open this port. 
-![Security Group](/Project3/images/SG.png)
+![Security Group](/Project03/images/SG.png)
 * Make sure the server is running and navigate to your browser. Use either the Public IP or DNS followed by port 5000 to display the following page:
-![Express webpage](/Project3/images/express_webpage.png)
+![Express webpage](/Project03/images/express_webpage.png)
 * The To-Do application will have 3 functions which are associated HTTP request methods:
     1. Create a new task (POST)
     2. Display all tasks (GET)
@@ -117,7 +117,7 @@ module.exports = router;
 ```bash
 npm install mongoose
 ```
-![install mongoose](/Project3/images/install_mongoose.png)
+![install mongoose](/Project03/images/install_mongoose.png)
 * Return back to Todo directory and create a directory called models.
 ```bash
 mkdir models && cd models
@@ -183,7 +183,7 @@ module.exports = router;
 ## 4. MongoDB Database
 * mLab is used as a Database as a Service solution. Create an account.
 * Create a cluster and follow the steps set up your first database. 
-![cluster](/Project3/images/cluster.png)
+![cluster](/Project03/images/cluster.png)
 * In the Todo directory, create a .env file. Add the connection string to connect to your database. This can be found by clicking connect to your database.
 ```
 touch .env
@@ -235,7 +235,7 @@ console.log(`Server running on port ${port}`)
 ```
 node index.js
 ```
-![Database Connected Successfully](/Project3/images/Database_connected.png)
+![Database Connected Successfully](/Project03/images/Database_connected.png)
 * The database is now connected so the next step is to test the code. As the front-end is yet to be configured, make use of Postman, a REST API development client. 
 ### Testing 
 * Create an account on Postman. You can either use the browser or download a desktop version. 
@@ -251,11 +251,11 @@ node index.js
     }
     ```
     * Click 'Send'. The output should return with status 200
-    ![POST](/Project3/images/POST.png)
+    ![POST](/Project03/images/POST.png)
 * The item has been added to the list therefore should also be present in the database: 
-![Item 1](/Project3/images/Item1.png)
+![Item 1](/Project03/images/Item1.png)
 * Also, the webpage should also include the item. As there is no front-end, it will not be formatted:
-![Webpage before front-end](/Project3/images/webpage_before_frontend.png)
+![Webpage before front-end](/Project03/images/webpage_before_frontend.png)
 
 2. GET - Retrieve all items in list
     * Select GET as request type.
@@ -268,16 +268,16 @@ node index.js
     ]
     ```
     * The output should be as follows:
-    ![GET Output](/Project3/images/GET_output.png)
+    ![GET Output](/Project03/images/GET_output.png)
 3. DELETE - Remove an item 
     * Select DELETE as request type
     * This request requires the id of the item. This can be obtained via the GET command 
     * Add the endpoint followed by the request id `http://<public_ip>:5000/api/todos/<item_id>`
-    ![DELETE request](/Project3/images/DELETE.png)
+    ![DELETE request](/Project03/images/DELETE.png)
     * To confirm, navigate back to the webpage and the list should be empty.
-    ![Empty List](/Project3/images/empty_list.png)
+    ![Empty List](/Project03/images/empty_list.png)
     * Likewise, the database should also be empty:
-    ![Empty DB](/Project3/images/empty_db.png)
+    ![Empty DB](/Project03/images/empty_db.png)
 
 
 ## 5.Frond-End Configuration
@@ -289,13 +289,13 @@ npx create-react-app client
 * This creates a folder called client where the code will be stored. 
 ### Blocker 
 * When attempting to run the above command, the following error was displayed:
-![blocker](/Project3/images/blocker.png)
+![blocker](/Project03/images/blocker.png)
 * The blocker indicated an issue with the version of node. To resolve, node needs upgrading. This can be done using the node version manager, nvm.
     1. Install nvm 
     ```bash
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
     ```
-    ![install nvm](/Project3/images/install_nvm.png)
+    ![install nvm](/Project03/images/install_nvm.png)
     2. Confirm installation (Bash may need restarting for changes to take effect)
     ```bash
     nvm --version
@@ -305,10 +305,10 @@ npx create-react-app client
     # Install version 14.4
     nvm install 14.4.0
     ```
-    ![Upgrade node](/Project3/images/upgrade_node.png)
+    ![Upgrade node](/Project03/images/upgrade_node.png)
 * The command `npx create-react-app client` can now be run and should create a clients directory
-![create-react-app](/Project3/images/create_react_app.png)
-![create-react-app2](/Project3/images/react_app.png)
+![create-react-app](/Project03/images/create_react_app.png)
+![create-react-app2](/Project03/images/react_app.png)
 
 
 * Next, install dependencies. 
@@ -320,7 +320,7 @@ npx create-react-app client
     ```bash 
     npm install nodemon --save-dev
     ```
-    ![install dependencies](/Project3/images/install_react_dep.png)
+    ![install dependencies](/Project03/images/install_react_dep.png)
 * In the Todo directory, open `package.json` and replace with the following (The scripts section has been changed from a default test script)
 ```json
 {
@@ -354,15 +354,15 @@ vi package.json
 # Paste in file (don't forget the comma)
 "proxy": "http://localhost:5000",
 ```
-![Configure Proxy](/Project3/images/configure_proxy.png)
+![Configure Proxy](/Project03/images/configure_proxy.png)
 * This allows the app to be accessed by calling the url rather than the entire path i.e. `http://localhost:5000/api/todos`
 * Return to Todo directory and run 
 ```
 npm run dev
 ```
-![NPM run dev](/Project3/images/npm_run_dev.png)
+![NPM run dev](/Project03/images/npm_run_dev.png)
 * Access the webpage via port 3000. (NB: SG rules must be amended to allow traffic from this port)
-![React Webpage](/Project3/images/React_webpage.png)
+![React Webpage](/Project03/images/React_webpage.png)
 * React uses components which allow for modularity and reusability. The app will consist of 2 stateful (holds some state - keeps track of changing data) components and 1 stateless(no state - prints out what is given or returns same output) component. 
 * The components will be created in the directory `Todo/client/src`. Navigate to this location and create a new directory called components:
 ```bash
@@ -428,7 +428,7 @@ cd ..
 cd ..
 npm install axios
 ```
-![components and install axios](/Project3/images/components.png)
+![components and install axios](/Project03/images/components.png)
 
 * Return to components directory and paste the following in ListTodo.js
 ```
@@ -650,12 +650,12 @@ font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 monospace;
 }
 ```
-![css](/Project3/images/css.png)
+![css](/Project03/images/css.png)
 
 * Return to the Todo directory and run the following command:
 ```
 npm run dev
 ```
-![npm run dev](/Project3/images/npm_run_dev2.png)
+![npm run dev](/Project03/images/npm_run_dev2.png)
 * Open the webpage and there should be a functioning To-Do app
-![Final App](/Project3/images/final_app.png)
+![Final App](/Project03/images/final_app.png)

@@ -1,6 +1,6 @@
 # LAMP Stack Implementation 
 
-[Project Implementation](https://github.com/A-Ahmed100216/LAMP_Stack_Implementation/blob/main/Project1/Implementation.md)
+[Project Implementation](https://github.com/A-Ahmed100216/LAMP_Stack_Implementation/blob/main/Project01/Implementation.md)
 
 ## Technology Stacks
 * Set of frameworks and tools used to develop software 

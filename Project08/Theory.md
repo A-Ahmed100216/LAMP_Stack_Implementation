@@ -24,4 +24,4 @@ The Webservers in Project 7 each have their own IP address from which they can b
     * Flexibly add or remove servers to meet demand.
 
 ### Types of Load Balancers
-![Types of LB](/Project8/images/LB_types.png)
+![Types of LB](/Project08/images/LB_types.png)

@@ -1,6 +1,6 @@
 # Project 4 - MEAN Stack Implementation 
 
-**[Project Implementation](https://github.com/A-Ahmed100216/LAMP_Stack_Implementation/blob/main/Project4/Implementation.md)**
+**[Project Implementation](https://github.com/A-Ahmed100216/LAMP_Stack_Implementation/blob/main/Project04/Implementation.md)**
 
 A MEAN stack deployment consists of the following:
 * **M**ongoDB - Database
@@ -45,7 +45,7 @@ A MEAN stack deployment consists of the following:
     * Transmits raw bit stream over the physical medium 
     * Includes the physical equipment i.e. cables and switches. 
 
-![OSI Model](/Project4/images/OSI_model.png)
+![OSI Model](/Project04/images/OSI_model.png)
 
 # Load Balancing 
 * Process of distributing network traffic across multiple servers. 

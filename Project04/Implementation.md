@@ -15,7 +15,7 @@ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 #  Install NodeJS
 sudo apt install -y nodejs
 ```
-![install nodejs](/Project4/images/install_nodejs.png)
+![install nodejs](/Project04/images/install_nodejs.png)
 
 
 ## 2. Install MongoDB 
@@ -32,7 +32,7 @@ sudo apt install -y mongodb
 sudo service mongodb start
 sudo systemctl status mongodb
 ```
-![mongodb status](/Project4/images/start_mongodb.png)
+![mongodb status](/Project04/images/start_mongodb.png)
 
 * Next, install Node package manager (npm)
 ```
@@ -42,7 +42,7 @@ sudo apt install -y npm
 ```
 sudo npm install body-parser
 ```
-![install body-parser](/Project4/images/install_bodyparser.png)
+![install body-parser](/Project04/images/install_bodyparser.png)
 * Create a directory called 'Books'. Navigate to this location and initialise the npm project. 
 ```
 mkdir Books 
@@ -72,7 +72,7 @@ app.listen(app.get('port'), function() {
 ```
 sudo npm install express mongoose
 ```
-![install mongoose](/Project4/images/install_mongoose.png)  
+![install mongoose](/Project04/images/install_mongoose.png)  
 * Navigate to the `Books` directory (if not already there) and created a folder called `apps`. Within the `apps` directory, create a file called `routes.js`
 ```bash
 mkdir apps && cd apps && vi routes.js
@@ -243,8 +243,8 @@ app.controller('myCtrl', function($scope, $http) {
 cd ..
 node server.js
 ```
-![node server.js](/Project4/images/node_serverjs.png)
+![node server.js](/Project04/images/node_serverjs.png)
 * The server is now running and accessible via port 3300. Make sure to amend the instance Security Group to enable inbound traffic from this port.
-![security group](/Project4/images/sg.png)
+![security group](/Project04/images/sg.png)
 * Navigating to the following address `http://<public_ip>:3300` should render a blank book register to which books can be added or deleted. 
-![final webpage](/Project4/images/webpage.png)
+![final webpage](/Project04/images/webpage.png)

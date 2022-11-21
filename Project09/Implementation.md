@@ -33,7 +33,7 @@ sudo systemctl status jenkins
 2. Navigate to Jenkins and select `New Item`. Name your project and select `Freestyle project`
 3. Scroll to or select the `Source Code Management' section. Select `Git` and populate with your repo info and credentials. 
 4. Save the configuration and trigger a manual build. 
-![Build 1](/Project9/images/Build1.png)
+![Build 1](/Project09/images/Build1.png)
 5. The next stage is to configure the build trigger so changes to the GitHub repo automatically trigger a new build. Navigate to Jenkins project configuration.
 6. Scroll to or select the `Build Triggers` section. Select the option for `GitHub hook trigger for GITScm polling`.
 7. Next configure `Post-Build Actions`. From the drop down, select `Archive the Artifacts` and set files to archive as `**`. These archived files are known as artifacts. 

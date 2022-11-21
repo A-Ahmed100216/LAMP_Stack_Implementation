@@ -1,6 +1,6 @@
 # Project 5 - Client/Server architecture using MySQL
 
-[Project Implementation](https://github.com/A-Ahmed100216/LAMP_Stack_Implementation/blob/main/Project5/Implementation.md)
+[Project Implementation](https://github.com/A-Ahmed100216/LAMP_Stack_Implementation/blob/main/Project05/Implementation.md)
 
 ## Client/Server Architecture
 * Architecture model where two or more computers are connected over a network and exchnage requests 
@@ -10,7 +10,7 @@
     1. Client makes HTTP (GET) request
     2. Server sends HTTP (GET) response 
 * Example 2 - INtroduce a database
-![Example 2](/Project5/images/example2.png)
+![Example 2](/Project05/images/example2.png)
     1. Webserver connects to database to read and write 
 
 ## Network Diagnostic Utilities

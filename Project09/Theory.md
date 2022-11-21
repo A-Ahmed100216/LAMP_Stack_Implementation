@@ -2,7 +2,7 @@
 
 ## Introduction
 This project will build upon the architecture from Projects 7 and 8. A Jenkins server will be added and a job will be configured to automatically deploy source code changes to the NFS Server therein implementing the DevOps principle of Continuous Integration.
-![Architecture](/Project9/images/architecture.png)
+![Architecture](/Project09/images/architecture.png)
 
 ## CI/CD
 CI/CD is an acronym for Continuos Integration, Continuos Delivery and Continuos Deployment - key principles in DevOps to deliver apps to customer by introducing automation into the development stages.   
