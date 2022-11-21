@@ -1,4 +1,4 @@
-# Project 6 - Web solution with Wordpress
+# Project 6 - Web Solution with Wordpress
 
 ## Introduction
 Project 6 consists of 2 parts:

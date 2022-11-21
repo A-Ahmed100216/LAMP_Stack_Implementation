@@ -5,3 +5,4 @@ The following repo consists of Project 1 - 10
 * [Project 3 - MERN Stack Implementation](https://github.com/A-Ahmed100216/LAMP_Stack_Implementation/blob/main/Project3/Theory.md)
 * [Project 4 - MEAN Stack Implementation](https://github.com/A-Ahmed100216/LAMP_Stack_Implementation/blob/main/Project4/Theory.md)
 * [Project 5 - Client/Server architecture using MySQL](https://github.com/A-Ahmed100216/LAMP_Stack_Implementation/blob/main/Project5/Theory.md)
+* Project 6 - Web Solution with Wordpress
